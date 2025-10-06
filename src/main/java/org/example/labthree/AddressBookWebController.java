@@ -33,4 +33,9 @@ public class AddressBookWebController {
 
         return "addressBook";
     }
+
+    @GetMapping("/")
+    public String landingPage(Model model) {
+        return "Greetings";
+    }
 }
