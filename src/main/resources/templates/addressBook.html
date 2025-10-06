@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Address Book Viewer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .buddy-list { list-style-type: none; padding: 0; }
+        .buddy-list li { border-bottom: 1px solid #eee; padding: 8px 0; }
+        .buddy-list li:last-child { border-bottom: none; }
+        .buddy-name { font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div th:if="${errorMessage}">
+    <h1 style="color: red;" th:text="${errorMessage}">Error Message Placeholder</h1>
+</div>
+
+<div th:unless="${errorMessage}">
+    <h1 th:text="'Address Book ID: ' + ${addressBook.addressBookId}">Address Book ID: 1</h1>
+
+    <h2>Buddies</h2>
+
+    <ul class="buddy-list">
+        <li th:each="buddy : ${buddies}">
+            <span class="buddy-name" th:text="${buddy.name}">Name Placeholder</span>
+            -
+            <span th:text="${buddy.phoneNumber}">Phone Placeholder</span>
+        </li>
+    </ul>
+
+    <p th:if="${buddies.isEmpty()}">This Address Book has no buddies.</p>
+</div>
+
+</body>
+</html>
