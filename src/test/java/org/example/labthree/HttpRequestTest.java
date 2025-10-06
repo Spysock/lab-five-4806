@@ -22,7 +22,7 @@ public class HttpRequestTest {
 
     @Test
     void getShouldReturnInfo() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/1/add/Steve/613-678-4643", String.class)).contains();
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/viewAddressBook?id=1", String.class)).contains("Bob");
     }
 }
 
