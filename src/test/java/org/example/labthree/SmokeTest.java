@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class SmokeTest {
     @Autowired
-    private AddressBookWebController controller;
+    private AddressBookController controller;
 
     @Test
     void contextLoads() throws Exception {

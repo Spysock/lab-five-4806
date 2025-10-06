@@ -19,8 +19,10 @@ public class HttpRequestTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+
     @Test
-    void greetingShouldReturnDefaultMessage() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/", String.class)).contains();
+    void getShouldReturnInfo() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/1/add/Steve/613-678-4643", String.class)).contains();
     }
 }
+
